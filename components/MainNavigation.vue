@@ -1,8 +1,8 @@
 <template>
   <ul class="navigation">
-    <li class="item"><a class="link paytone" href="">Soundclound</a></li>
-    <li class="item"><a class="link paytone" href="">Instagram</a></li>
-    <li class="item"><a class="link paytone" href="">Twitch</a></li>
+    <li class="item"><a class="link paytone" target="_blank" href="https://soundcloud.com/dj_kaat">Soundclound</a></li>
+    <li class="item"><a class="link paytone" target="_blank" href="https://www.instagram.com/dj_kat909/">Instagram</a></li>
+    <li class="item"><a class="link paytone" target="_blank" href="https://m.twitch.tv/dj_kat_twitch/">Twitch</a></li>
   </ul>
 </template>
 
@@ -10,6 +10,8 @@
 .navigation {
   padding-top: 2rem;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .item {
