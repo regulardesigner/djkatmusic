@@ -25,6 +25,6 @@ export default {
 
 .welcome {
   margin-top: 10rem;
-  text-shadow: 0 0 20px #8888dc;
+  text-shadow: 0 0 10px #9898eb;
 }
 </style>
