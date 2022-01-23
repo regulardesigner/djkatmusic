@@ -58,7 +58,7 @@ export default {
 
 <style>
 .music {
-  padding-top: 4rem;
+  padding-top: 2rem;
   max-width: 50rem;
   margin: 0 auto;
 }

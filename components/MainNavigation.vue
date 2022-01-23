@@ -77,4 +77,20 @@
 .icon-twitch {
   background-image: url('~/assets/images/TwitchGlitchBlackOps.png');
 }
+
+@media (max-width: 576px) {
+  .navigation {
+    flex-direction: column;
+  }
+
+  .item {
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .item:last-child {
+    margin-right: 1.2rem;
+  }
+}
 </style>
