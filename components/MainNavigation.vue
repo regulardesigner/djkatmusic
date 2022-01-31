@@ -1,22 +1,28 @@
 <template>
   <ul class="navigation">
-    <li class="item">
-      <a class="link paytone" target="_blank" href="https://soundcloud.com/dj_kaat">
-        <span class="icon-soundcloud" />Soundcloud
-      </a>
-    </li>
-    <li class="item">
-      <a class="link paytone" target="_blank" href="https://www.instagram.com/dj_kat909/">
-        <span class="icon-instagram" />Instagram
-      </a>
-    </li>
-    <li class="item">
-      <a class="link paytone" target="_blank" href="https://m.twitch.tv/dj_kat_twitch/">
-        <span class="icon-twitch" />Twitch
+    <li v-for="item in nav_urls" :key="item" class="item">
+      <a class="link paytone" target="_blank" :href="item.url">
+        <span class="icon" :class="item.class" />
+        {{ item.name }}
       </a>
     </li>
   </ul>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      nav_urls: [
+        { name: 'Soundcloud' , url: 'https://soundcloud.com/dj_kaat', class: 'icon-soundcloud' },
+        { name: 'Instagram' , url: 'https://www.instagram.com/dj_kat909', class: 'icon-instagram' },
+        { name: 'Twitch' , url: 'https://m.twitch.tv/dj_kat_twitch', class: 'icon-twitch' },
+        { name: 'Youtube' , url: 'https://www.youtube.com/channel/UCJyVE0O-lPD864lBvZElbHg', class: 'icon-youtube' }
+      ]
+    }
+  }
+}
+</script>
 
 <style>
 .navigation {
@@ -55,12 +61,11 @@
   background-color: #fff0f0;
 }
 
-.icon-soundcloud,
-.icon-instagram,
-.icon-twitch {
+.icon {
   display: inline-block;
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center center;
   margin: 0.4rem;
   width: 2rem;
   height: 2rem;
@@ -76,6 +81,10 @@
 
 .icon-twitch {
   background-image: url('~/assets/images/TwitchGlitchBlackOps.png');
+  }
+
+.icon-youtube {
+  background-image: url('~/assets/images/youtube_logo.png');
 }
 
 @media (max-width: 576px) {
