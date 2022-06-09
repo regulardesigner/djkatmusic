@@ -2,7 +2,7 @@
   <div>
     <banner />
     <main-navigation />
-    <audio-player />
+    <players-list />
   </div>
 </template>
 

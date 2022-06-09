@@ -1,6 +1,6 @@
 <template>
   <ul class="navigation">
-    <li v-for="item in nav_urls" :key="item" class="item">
+    <li v-for="item in nav_urls" :key="item.name" class="item">
       <a class="link paytone" target="_blank" :href="item.url">
         <span class="icon" :class="item.class" />
         {{ item.name }}
