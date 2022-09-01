@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import Hls from 'hls.js'
+
 export default {
 
   props: {
@@ -46,6 +48,14 @@ export default {
     this.audioPlayer.ontimeupdate = _event => {
       this.song_current_time = this.audioPlayer.currentTime
       this.song_duration = this.audioPlayer.duration
+    }
+
+    // test if hls is available
+    // todo: remove this hls test
+    if (Hls.isSupported()) {
+      console.log('👋 hello hls.js!');
+    } else {
+      console.log('🤷🏻‍♂️ Sorry no hls.js')
     }
   },
 
