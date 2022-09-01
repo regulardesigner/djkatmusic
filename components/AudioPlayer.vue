@@ -4,12 +4,12 @@
     <div class="controls">
       <div class="controls-time" />
     </div>
-    <audio ref="audioPlayer" class="html-player" controls controlsList="nodownload">
-      <source :src="require(`@/assets/audio/${song.title}.mp3`).default" type="audio/mpeg">
-      <source :src="require(`@/assets/audio/${song.title}.ogg`).default" type="audio/ogg">
+    <video ref="audioPlayer" class="html-player" controls controlsList="nodownload">
+      <!-- <source :src="require(`@/assets/audio/${song.title}.mp3`).default" type="audio/mpeg">
+      <source :src="require(`@/assets/audio/${song.title}.ogg`).default" type="audio/ogg"> -->
       <!-- fallback for non supporting browsers goes here -->
       <p>Your browser does not support HTML5 audio, but you can still.</p>
-    </audio>
+    </video>
   </section>
 </template>
 
@@ -57,6 +57,23 @@ export default {
       console.log('👋 hello hls.js!');
     } else {
       console.log('🤷🏻‍♂️ Sorry no hls.js')
+    }
+
+    if (Hls.isSupported()) {
+    const video = this.$refs.audioPlayer
+    const hls = new Hls();
+    // bind them together
+    hls.attachMedia(video);
+      hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+        console.log('video and hls.js are now bound together !');
+        // hls.loadSource('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
+        hls.loadSource('http://127.0.0.1:3000/ada/ada-ya.m3u8');
+        hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+          console.log(
+            'manifest loaded, found ' + data.levels.length + ' quality level'
+          );
+        });
+      });
     }
   },
 
