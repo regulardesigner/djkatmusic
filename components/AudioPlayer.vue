@@ -52,6 +52,7 @@ export default {
 
     // test if hls is available
     // todo: remove this hls test
+    // 📖 https://github.com/video-dev/hls.js/blob/master/docs/API.md#first-step-setup-and-support
     if (Hls.isSupported()) {
       console.log('👋 hello hls.js!');
     } else {
